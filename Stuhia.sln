@@ -3,12 +3,51 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9A746571-2AF6-4B16-B2BA-4150A15FF916}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{F3E89CBF-8E42-4A56-A62A-40899313C38E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stuhia", "src\Stuhia\Stuhia.csproj", "{E88029F8-D639-467C-B032-8B4E894DC908}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stuhia.Tests.Unit", "test\Stuhia.Tests.Unit\Stuhia.Tests.Unit.csproj", "{BFA72CBF-0933-4335-BE70-C38A87CFA140}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stuhia.Tests.Acceptance", "test\Stuhia.Tests.Acceptance\Stuhia.Tests.Acceptance.csproj", "{C9832D11-8E80-48AF-BBDC-B7A11DA2FC2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stuhia.Tests.Integration", "test\Stuhia.Tests.Integration\Stuhia.Tests.Integration.csproj", "{44393196-6731-435B-BAD8-9BAD07B2EE9A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E88029F8-D639-467C-B032-8B4E894DC908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E88029F8-D639-467C-B032-8B4E894DC908}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E88029F8-D639-467C-B032-8B4E894DC908}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E88029F8-D639-467C-B032-8B4E894DC908}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFA72CBF-0933-4335-BE70-C38A87CFA140}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFA72CBF-0933-4335-BE70-C38A87CFA140}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFA72CBF-0933-4335-BE70-C38A87CFA140}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFA72CBF-0933-4335-BE70-C38A87CFA140}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9832D11-8E80-48AF-BBDC-B7A11DA2FC2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9832D11-8E80-48AF-BBDC-B7A11DA2FC2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9832D11-8E80-48AF-BBDC-B7A11DA2FC2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9832D11-8E80-48AF-BBDC-B7A11DA2FC2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44393196-6731-435B-BAD8-9BAD07B2EE9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44393196-6731-435B-BAD8-9BAD07B2EE9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44393196-6731-435B-BAD8-9BAD07B2EE9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44393196-6731-435B-BAD8-9BAD07B2EE9A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E88029F8-D639-467C-B032-8B4E894DC908} = {9A746571-2AF6-4B16-B2BA-4150A15FF916}
+		{BFA72CBF-0933-4335-BE70-C38A87CFA140} = {F3E89CBF-8E42-4A56-A62A-40899313C38E}
+		{C9832D11-8E80-48AF-BBDC-B7A11DA2FC2D} = {F3E89CBF-8E42-4A56-A62A-40899313C38E}
+		{44393196-6731-435B-BAD8-9BAD07B2EE9A} = {F3E89CBF-8E42-4A56-A62A-40899313C38E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A13578F-B9AE-4CFB-955B-9EECE28F640F}
 	EndGlobalSection
 EndGlobal
