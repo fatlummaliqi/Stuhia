@@ -19,7 +19,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<InternalsVisibleTo Include="Stuhia.Tests.Unit" />
+		<InternalsVisibleTo Include="Stuhia.Tests.Unit" />	
 	</ItemGroup>
 
 	<ItemGroup>
