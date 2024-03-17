@@ -34,7 +34,6 @@ internal abstract class EventContext
         }
     }
 
-    public abstract bool LoggingEnabled { get; }
     public abstract bool SilentFailuresEnabled { get; }
 
     public abstract void Construct(StuhiaConfiguration configuration);

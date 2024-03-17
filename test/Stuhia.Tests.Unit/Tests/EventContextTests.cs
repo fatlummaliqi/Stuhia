@@ -14,7 +14,6 @@ public class EventContextTests
     private static readonly StuhiaConfiguration _configuration = new()
     {
         SilentFailures = true,
-        EnableLogging = true,
         AssembliesToScan = [Assembly.GetExecutingAssembly()]
     };
 

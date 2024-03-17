@@ -8,23 +8,9 @@ namespace Stuhia.Core;
 internal class InternalEventContext : EventContext
 {
     private bool _isConstructed;
-    private bool _loggingEnabled;
     private bool _silentFailuresEnabled;
 
     private readonly IDictionary<string, Type> _eventHandlers = new Dictionary<string, Type>();
-
-    public override bool LoggingEnabled
-    {
-        get
-        {
-            if (!_isConstructed)
-            {
-                throw new InvalidOperationException("Event Context is not constructed.");
-            }
-
-            return _loggingEnabled;
-        }
-    }
 
     public override bool SilentFailuresEnabled
     {
@@ -61,7 +47,6 @@ internal class InternalEventContext : EventContext
         }
 
         _silentFailuresEnabled = configuration.SilentFailures;
-        _loggingEnabled = configuration.EnableLogging;
 
         _isConstructed = true;
     }

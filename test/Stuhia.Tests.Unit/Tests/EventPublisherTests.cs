@@ -12,7 +12,6 @@ public class EventPublisherTests
 {
     private readonly StuhiaConfiguration _configuration = new()
     {
-        EnableLogging = false,
         SilentFailures = false,
         AssembliesToScan = [ Assembly.GetExecutingAssembly() ]
     };
@@ -23,7 +22,7 @@ public class EventPublisherTests
         //Arrange
         EventContext.Current.Construct(_configuration);
         var serviceProvider = Mock.Of<IServiceProvider>();  
-        var eventPublisher = new InternalEventPublisher(serviceProvider, logger: null);
+        var eventPublisher = new InternalEventPublisher(serviceProvider);
 
         //Act
         await eventPublisher.PublishAsync(new PeekabooEvent());
