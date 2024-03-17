@@ -81,7 +81,17 @@ internal class InternalEventContext : EventContext
             handlerDependencyInstances.Add(serviceProvider.GetRequiredService(handlerDependency));
         }
 
-        var handlerInstance = Activator.CreateInstance(handlerType, handlerDependencies.ToArray());
+        object handlerInstance;
+
+        if (handlerDependencies.Any())
+        {
+            handlerInstance = Activator.CreateInstance(handlerType, handlerDependencies.ToArray());
+        }
+        else
+        {
+            handlerInstance = Activator.CreateInstance(handlerType);
+        }
+
 
         return handlerInstance as IEventHandler<TEvent>;
     }
