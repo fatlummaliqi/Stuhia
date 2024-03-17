@@ -53,7 +53,7 @@ internal class InternalEventContext : EventContext
                     {
                         if (@interface.IsGenericType && @interface.GetGenericTypeDefinition() == typeof(IEventHandler<>))
                         {
-                            _eventHandlers[@interface.FullName] = type;
+                            _eventHandlers[@interface.GetGenericArguments().First().FullName] = type;
                         }
                     }
                 }
@@ -87,7 +87,7 @@ internal class InternalEventContext : EventContext
         }
 
         var handlerType = _eventHandlers[eventTypeFullName];
-        var handlerDependencies = handlerType.GetMethod(typeof(TEvent).Name).GetParameters().Select(parameter => parameter.ParameterType);
+        var handlerDependencies = handlerType.GetConstructors().First().GetParameters().Select(parameter => parameter.ParameterType);
 
         var handlerDependencyInstances = new List<object>();
 

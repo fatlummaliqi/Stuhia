@@ -4,7 +4,7 @@ namespace Stuhia.Configurations;
 
 public record StuhiaConfiguration
 {
-    internal List<Assembly> AssembliesToScan;
+    internal List<Assembly> AssembliesToScan = [];
 
     public bool SilentFailures { get; set; } = true;
     public bool EnableLogging { get; set; } = true;

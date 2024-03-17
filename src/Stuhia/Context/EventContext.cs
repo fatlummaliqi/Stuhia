@@ -17,7 +17,7 @@ internal abstract class EventContext
             {
                 if (_current == null)
                 {
-                    var assemblyTypes = Assembly.GetCallingAssembly().GetTypes();
+                    var assemblyTypes = Assembly.GetExecutingAssembly().GetTypes();
 
                     var eventContextType = assemblyTypes.FirstOrDefault(type => !type.IsAbstract && !type.IsInterface && type.IsSubclassOf(typeof(EventContext)));
 
