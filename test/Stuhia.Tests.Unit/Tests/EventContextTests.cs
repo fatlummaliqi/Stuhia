@@ -1,4 +1,4 @@
-﻿using FakeItEasy;
+﻿using Moq;
 using Stuhia.Configurations;
 using Stuhia.Context;
 using Stuhia.Models.Exceptions;
@@ -11,7 +11,7 @@ namespace Stuhia.Tests.Unit.Tests;
 
 public class EventContextTests
 {
-    private static readonly StuhiaConfiguration _configuration = new StuhiaConfiguration
+    private static readonly StuhiaConfiguration _configuration = new()
     {
         SilentFailures = true,
         EnableLogging = true,
@@ -68,7 +68,7 @@ public class EventContextTests
     public void ResolveHandler_Should_Return_Expected_Handler()
     {
         //Arrange
-        var serviceProvider = A.Fake<IServiceProvider>();
+        var serviceProvider = Mock.Of<IServiceProvider>();
 
         EventContext.Current.Construct(_configuration);
 
@@ -84,7 +84,7 @@ public class EventContextTests
     public void ResolveHandler_Should_Throw_UnSupportedHandlerException()
     {
         //Arrange 
-        var serviceProvider = A.Fake<IServiceProvider>();
+        var serviceProvider = Mock.Of<IServiceProvider>();
 
         EventContext.Current.Construct(_configuration);
 
