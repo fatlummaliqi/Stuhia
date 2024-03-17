@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Stuhia.Configurations;
 using Stuhia.Context;
-using System.Reflection;
+using Stuhia.Models.Exceptions;
 
 namespace Stuhia.Core;
 
@@ -70,7 +70,7 @@ internal class InternalEventContext : EventContext
     {
         if (!_isConstructed)
         {
-            throw new InvalidOperationException("Event Context is not constructed.");
+            throw new NotConstructedEventContextException();
         }
 
         if (serviceProvider == null)
@@ -83,7 +83,7 @@ internal class InternalEventContext : EventContext
 
         if (!handlerTypePresent)
         {
-            throw new ArgumentNullException($"Event handler for {typeof(TEvent).Name} application event could not be found.");
+            throw new UnSupportedHandlerException(typeof(TEvent).Name);
         }
 
         var handlerType = _eventHandlers[eventTypeFullName];

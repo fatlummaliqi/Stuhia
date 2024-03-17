@@ -1,6 +1,7 @@
 ﻿using FakeItEasy;
 using Stuhia.Configurations;
 using Stuhia.Context;
+using Stuhia.Models.Exceptions;
 using Stuhia.Tests.Unit.Helpers.Events;
 using Stuhia.Tests.Unit.Helpers.Events.Handlers;
 using System.Reflection;
@@ -41,13 +42,13 @@ public class EventContextTests
     }
 
     [Fact]
-    public void ResolveHandler_Should_Throw_InvalidOperationException()
+    public void ResolveHandler_Should_Throw_NotConstructedEventContextException()
     {
         //Act
         static void Act() => EventContext.Current.ResolveHandler<PeekabooEvent>(serviceProvider: null);
 
         //Assert
-        Assert.Throws<InvalidOperationException>(Act);
+        Assert.Throws<NotConstructedEventContextException>(Act);
     }
 
     [Fact]
@@ -77,5 +78,20 @@ public class EventContextTests
         //Assert
         Assert.NotNull(handler);
         Assert.Equal(typeof(PeekabooEventHandler), handler.GetType());
+    }
+
+    [Fact]
+    public void ResolveHandler_Should_Throw_UnSupportedHandlerException()
+    {
+        //Arrange 
+        var serviceProvider = A.Fake<IServiceProvider>();
+
+        EventContext.Current.Construct(_configuration);
+
+        //Act
+        void Act() => EventContext.Current.ResolveHandler<PikachuEvent>(serviceProvider);
+
+        //Assert
+        Assert.Throws<UnSupportedHandlerException>(Act);
     }
 }
