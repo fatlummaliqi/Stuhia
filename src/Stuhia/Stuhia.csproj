@@ -4,6 +4,13 @@
 		<TargetFramework>net8.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>disable</Nullable>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Title>Stuhia</Title>
+		<Description>Stuhia is a .NET NuGet package designed to simplify event handling and decouple application concerns. With this package, developers can easily publish and subscribe to application-level events, enabling a more flexible and maintainable architecture. By abstracting event handling, Stuhia promotes cleaner code and better separation of concerns. Start using Stuhia today to enhance the modularity and extensibility of your .NET applications!</Description>
+		<PackageProjectUrl>https://github.com/fatlummaliqi/Stuhia</PackageProjectUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/fatlummaliqi/Stuhia</RepositoryUrl>
+		<PackageTags>events,application-event,decoupling</PackageTags>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -13,6 +20,13 @@
 
 	<ItemGroup>
 		<InternalsVisibleTo Include="Stuhia.Tests.Unit" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
 	</ItemGroup>
 
 </Project>
