@@ -1,3 +1,7 @@
+![RESTFulSense](https://raw.githubusercontent.com/fatlummaliqi/Stuhia/main/assets/images/storm.png)
+
+[![Nuget](https://img.shields.io/nuget/v/Stuhia?logo=nuget&style=default)](https://www.nuget.org/packages/Stuhia)
+
 # Stuhia
 
 **Stuhia** is a .NET NuGet package designed to simplify event handling and decouple application concerns. With this package, developers can easily publish and subscribe to application-level events, enabling a more flexible and maintainable architecture. By abstracting event handling, **Stuhia** promotes cleaner code and better separation of concerns. Start using **Stuhia** today to enhance the modularity and extensibility of your .NET applications!
