@@ -4,10 +4,12 @@ using Stuhia.Context;
 
 namespace Stuhia.Core;
 
-internal class InternalEventPublisher : IEventPublisher
+internal class InternalEventPublisher(
+    IServiceProvider serviceProvider,
+    ILogger<InternalEventPublisher> logger) : IEventPublisher
 {
-    private readonly IServiceProvider _serviceProvider;
-    private readonly ILogger<InternalEventPublisher> _logger;
+    private readonly IServiceProvider _serviceProvider = serviceProvider;
+    private readonly ILogger<InternalEventPublisher> _logger = logger;
 
     public async Task PublishAsync<TEvent>(TEvent @event, CancellationToken cancellationToken = default) where TEvent : IApplicationEvent
     {
