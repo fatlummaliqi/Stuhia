@@ -85,7 +85,7 @@ internal class InternalEventContext : EventContext
 
         if (handlerDependencies.Any())
         {
-            handlerInstance = Activator.CreateInstance(handlerType, handlerDependencies.ToArray());
+            handlerInstance = Activator.CreateInstance(handlerType, handlerDependencyInstances.ToArray());
         }
         else
         {
