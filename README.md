@@ -1,6 +1,7 @@
 ![RESTFulSense](https://raw.githubusercontent.com/fatlummaliqi/Stuhia/main/assets/images/storm.png)
 
 [![Nuget](https://img.shields.io/nuget/v/Stuhia?logo=nuget&style=default)](https://www.nuget.org/packages/Stuhia)
+![Nuget](https://img.shields.io/nuget/dt/Stuhia?color=blue&label=Downloads)
 
 # Stuhia
 
