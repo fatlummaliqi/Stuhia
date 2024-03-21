@@ -1,4 +1,4 @@
-![RESTFulSense](https://raw.githubusercontent.com/fatlummaliqi/Stuhia/main/assets/images/storm.png)
+![Stuhia](https://raw.githubusercontent.com/fatlummaliqi/Stuhia/main/assets/images/storm.png)
 
 [![Nuget](https://img.shields.io/nuget/v/Stuhia?logo=nuget&style=default)](https://www.nuget.org/packages/Stuhia)
 ![Nuget](https://img.shields.io/nuget/dt/Stuhia?color=blue&label=Downloads)
@@ -57,3 +57,18 @@ public async Task<bool> UpdateAsync(int id, DomainEntity entity)
     }
 }
 ````
+
+### One more thing
+
+In order to make this thing work, you need to register Stuhia in your `Program.cs`. This can be done by invoking the desired extension method, like shown below.
+
+````csharp
+builder.Services.AddApplicationEvents(config =>
+{
+    config.SilentFailures = tru;
+    config.RegisterHandlersFromAssembly(Assembly.GetAssembly(typeof(EntityUpdatedEventHandler));
+});
+````
+
+And by that, you're ready to go. Happy publishing and handling!
+
