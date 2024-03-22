@@ -22,6 +22,9 @@ internal class InternalEventPublisher(IServiceProvider serviceProvider) : IEvent
 
         var handler = EventContext.Current.ResolveHandler<TEvent>(_serviceProvider);
 
-        await handler?.HandleAsync(@event, cancellationToken);
+        if (handler != null)
+        {
+            await handler.HandleAsync(@event, cancellationToken);
+        }
     }
 }
