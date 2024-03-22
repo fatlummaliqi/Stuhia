@@ -65,7 +65,7 @@ In order to make this thing work, you need to register Stuhia in your `Program.c
 ````csharp
 builder.Services.AddApplicationEvents(config =>
 {
-    config.SilentFailures = tru;
+    config.SilentFailures = true;
     config.RegisterHandlersFromAssembly(Assembly.GetAssembly(typeof(EntityUpdatedEventHandler));
 });
 ````
