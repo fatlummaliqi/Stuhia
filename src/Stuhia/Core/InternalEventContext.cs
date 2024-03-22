@@ -66,9 +66,14 @@ internal class InternalEventContext : EventContext
         var eventTypeFullName = typeof(TEvent).FullName;
         var handlerTypePresent = _eventHandlers.ContainsKey(eventTypeFullName);
 
-        if (!handlerTypePresent && !_silentFailuresEnabled)
+        if (!handlerTypePresent)
         {
-            throw new UnSupportedHandlerException(typeof(TEvent).Name);
+            if (!_silentFailuresEnabled)
+            {
+                throw new UnSupportedHandlerException(typeof(TEvent).Name);
+            }
+
+            return null;
         }
 
         var handlerType = _eventHandlers[eventTypeFullName];
